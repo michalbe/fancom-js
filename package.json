@@ -8,6 +8,10 @@
     "jshint": "^2.5.3",
     "precommit-hook": "^1.0.7"
   },
+  "dependencies": {
+    "git-info": "^1.0.0",
+    "simple-random-emoji": "^1.0.0"
+  },
   "scripts": {
     "test": "node tests/fancom-js-tests.js",
     "lint": "node node_modules/jshint/bin/jshint ."
