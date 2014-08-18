@@ -1,3 +1,12 @@
+//    ____
+//   / __/___ _____  _________  ____ ___
+//   / /_/ __ `/ __ \/ ___/ __ \/ __ `__ \
+//  / __/ /_/ / / / / /__/ /_/ / / / / / /
+// /_/  \__,_/_/ /_/\___/\____/_/ /_/ /_/
+//
+// Fancy Commit Manager Config file
+// JS version
+// https://github.com/michalbe/fancom-js
 {
   // Name of the repository
   // default: name of the current repo
