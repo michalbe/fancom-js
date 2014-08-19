@@ -5,7 +5,7 @@ var sre = require('simple-random-emoji');
 var fs = require('fs');
 var path = process.cwd();
 
-JSON.minify = JSON.minify || require("node-json-minify");
+JSON.minify = JSON.minify || require('node-json-minify');
 
 gi(['author', 'branch', 'repository', 'name'], function(err, data) {
   var config = {
@@ -28,7 +28,7 @@ gi(['author', 'branch', 'repository', 'name'], function(err, data) {
       throw err;
     }
      var extConfig = JSON.parse(JSON.minify(data.toString()));
-     console.log(extConfig);
+     console.log(extConfig, sre, config);
   });
   //console.log(config, sre);
 });
