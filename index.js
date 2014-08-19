@@ -2,20 +2,33 @@
 
 var gi = require('git-info');
 var sre = require('simple-random-emoji');
+var fs = require('fs');
+var path = process.cwd();
+
+JSON.minify = JSON.minify || require("node-json-minify");
 
 gi(['author', 'branch', 'repository', 'name'], function(err, data) {
   var config = {
-    'reponame'        : 'reponame',
+    'mainbranch'      : data.branch,
+    'reponame'        : data.name,
     'pushtotemp'      : 1,
-    'comparewith'     : 'branch to compare',
+    'comparewith'     : '',
     'devsuffix'       : 'temp',
     'emoji'           : 1,
     'addall'          : 1,
-    'prefix'          : 'Shit\'s on fire yo',
+    'prefix'          : '',
     'branchincommit'  : 1,
     'noprefix'        : 1,
     'opencompare'     : 1,
-    'author'          : 'authorname'
+    'author'          : data.author
   };
-  console.log(config.prefix, sre);
+
+  fs.readFile(path+'/fancom.json', function (err, data) {
+    if (err) {
+      throw err;
+    }
+     var extConfig = JSON.parse(JSON.minify(data.toString()));
+     console.log(extConfig);
+  });
+  //console.log(config, sre);
 });
